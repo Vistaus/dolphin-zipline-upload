@@ -1,0 +1,26 @@
+"""Post-upload hook for Zipline Upload (Dolphin).
+
+Copy this file to ~/.config/zipline-upload/hook.py and it runs after every
+successful upload batch — your chance to add custom behaviour without
+touching the main script. Errors are caught and reported, never fatal.
+
+The hook receives:
+
+    urls   list[str]  final URLs of the uploads, in selection order
+    files  list[str]  local paths of the uploaded files
+    cfg    dict       the effective config (token masked out of nothing —
+                      it IS readable; treat it as a secret)
+
+The example below appends a Markdown link per upload to a running log.
+Replace it with whatever you like — desktop notifications for specific
+servers, QR-coding the URL, poking a webhook, renaming by EXIF date…
+"""
+
+
+def on_upload_complete(urls, files, cfg):
+    import os
+    log_path = os.path.expanduser("~/uploads.md")
+    with open(log_path, "a", encoding="utf-8") as fh:
+        for url, path in zip(urls, files):
+            name = os.path.basename(path)
+            fh.write(f"- [{name}]({url})\n")
