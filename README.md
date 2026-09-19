@@ -25,9 +25,9 @@ The upload worker is built entirely from the Python standard library and Plasma'
 
 ## Installing
 
-### From the KDE Store (easiest)
+### Official KDE Store
 
-Add store link here
+[Store Link](https://store.kde.org/p/2372233/) 
 
 **Dolphin** → **Hamburger Menu** → **Download New Service Menus…** → **Search** "Zipline" → **Install**. 
 
