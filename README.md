@@ -1,5 +1,7 @@
 # Zipline Upload for Dolphin
 
+![](assets/banner.png)
+
 A context-menu uploader for [Zipline](https://zipline.diced.sh) on **KDE Plasma 6** (Dolphin 24.x/25.x, KF6). Right-click a file in Dolphin → **Upload to Zipline**: the file is uploaded with a live progress bar (with a Cancel button), and the resulting URL is copied to your clipboard.
 
 The upload worker is built entirely from the Python standard library and Plasma's own tools (`kdialog`, DBus, Klipper, `notify-send`) - **no pip dependencies**. The optional windowed settings GUI uses PySide6, downloaded to a private venv only if you ask for it.
